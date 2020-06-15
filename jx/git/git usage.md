@@ -236,3 +236,123 @@ master分支应该是非常稳定的，也就是仅用来发布新版本，平�
 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
 
 ### Bug分支
+```
+$ git stash
+```
+储存工作现场
+
+切换到用于解决bug的分支，新建在它的基础上新建一个分支。在新分支上解决bug。解决之后合并分支
+
+```
+$ git stash list
+```
+查看储存的工作现场
+
+- 恢复现场
+    ```
+    //不会删除stash内容
+    $ git stash apply
+    $ git stash apply stash@{0}
+    //会删除stash内容
+    $ git stash pop
+    ```
+- 删除stash内容
+    ```
+    $ git stash drop
+    ```
+
+升级版本
+```
+$ git cherry-pick <版本号>
+```
+只merge<版本号>中的修改内容
+
+### feature分支
+
+开发一个新feature，最好新建一个分支
+
+如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+
+### 多人协作
+```
+$ git remote -v
+```
+查看远程仓库的详细信息
+
+```
+$ git push <local>:<remote>
+$ git fetch origin <branch>
+$ git pull origin <branch>
+```
+一些常用的语句
+
+```
+$ git branch --set-upstream-to <branch-name> origin/<branch-name>
+```
+如果本地库和远程库没有建立关联，可以使用以上代码
+
+```
+$ git checkout -b branch-name origin/branch-name
+```
+创建分支时建立关联
+
+### rebase
+```
+$ git rebase
+```
+把分叉的提交历史“整理”成一条直线，看上去更直观。缺点是本地的分叉提交已经被修改过了
+
+## 标签管理
+### 创建标签
+```
+$ git tag <name>
+$ git tag <name> <commit id>
+```
+
+```
+$ git show <tagname>
+```
+查看标签信息
+
+```
+$ git tag -a <tagname> -m "blablabla..."
+```
+指定标签信息
+
+### 操作标签
+```
+$ git push origin <tagname>
+```
+推送一个本地标签
+
+```
+$ git push origin --tags
+```
+推送全部未推送的本地标签
+
+```
+$ git tag -d <tagname>
+```
+删除一个本地标签
+
+```
+$ git push origin :refs/tags/<tagname>
+```
+删除一个远程标签，注意refs/tags不可省略
+
+## 自定义git
+### 忽略文件
+忽略某些文件时，需要编写.gitignore
+
+### 定义别名
+```
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+### 搭建git服务器
+> 目前没有大用处，先不看了
+
+## 使用source tree
+使用SourceTree可以以图形界面操作Git，省去了敲命令的过程，对于常用的提交、分支、推送等操作来说非常方便。
+
+SourceTree使用Git命令执行操作，出错时，仍然需要阅读Git命令返回的错误信息。
