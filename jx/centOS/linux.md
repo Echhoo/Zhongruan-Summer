@@ -1,6 +1,7 @@
 # Linux
 > 参考[菜鸟教程](https://www.runoob.com/linux/linux-tutorial.html)等
 
+## 目录
 [文件结构](#文件结构) \
 [linux文件与目录管理](#linux文件基本属性) \
 [Linux文件属主和属组](#linux文件属主和属组) \ [更改文件属性](#更改文件属性) \
