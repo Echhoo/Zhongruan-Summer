@@ -50,6 +50,7 @@
 五、字典{'a':'b','c':5}
 	字典 字典 是一系列键 键—值对 值对 。
 	在字典中储存列表
+。	.items是内容
 	pizza = {
    		 'crust': 'thick',
    		 'toppings': ['mushrooms', 'extra cheese'], 
@@ -80,8 +81,14 @@
 
 六、用户输入和while循环
 	msg=input("input msg")
+	while循环可以定义用户是否是选择退出
+	break退出循环
+	continue退出本次循环
 七、函数
+	def hello():定义
+	hello()调用
 八、类
+	class Dog():
 九、文件和异常
 	
 
