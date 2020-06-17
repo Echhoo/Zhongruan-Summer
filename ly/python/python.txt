@@ -1,0 +1,53 @@
+一、变量和简单数据类型
+1.变量
+	变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为message_1，但不能将其命名为1_message。 
+	变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message可行，但变量名greeting message会引发错误。 
+	不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，如print （请参见附录A.4）。 
+	变量名应既简短又具有描述性。例如，name比n好，student_name比s_n好，name_length比length_of_persons_name好。
+ 慎用小写字母l和大写字母O，因为它们可能被人错看成数字1和0
+2.字符串
+	Python使用加号（+ ）来合并字符串。
+	要在字符串中添加制表符，可使用字符组合\t
+	要在字符串中添加换行符，可使用字符组合\n
+	要确保字符串末尾没有空白，可使用方法rstrip() 
+	剔除字符串开头的空白，或同时剔除字符串两端的空白。为此，可分别使用方法lstrip() 和strip() 
+	str.upper()转换大写字母
+	str.lower()转换小写字母
+	str.capitalize()第一个字母大写 其余小写
+	str.title()把每个单词的第一个字母转化为大写，其余小写
+3.整数、浮点数
+	数str() ， 它让Python将非字符串值表示为字符串
+4.注释
+	在Python中，注释用井号（# ）标识。
+5.Python之禅
+	import this
+二、列表 ['a','b']
+	给列表附加元素到列表末尾：<列表>.append(）
+	使用方法insert() 可在列表的任何位置添加新元素。 names.insert(0, 'ducati'）
+	删除 del names[0],知道要删除的元素在列表中的位置
+	pop() 可删除列表末尾的元素
+	remove() 根据值删除元素 
+	使用方法sort() 对列表进行永久性排序 names.sort()
+	使用函数sorted() 对列表进行临时排
+
+	反转列表元素的排列顺序，可使用方法reverse() 
+	len() 可快速获悉列表的长度
+       便利列表：
+       数值列表：range(m，n，q)生成【m,n)一系列的数字,q为步长 
+	        list()转换成列表
+	min ,max ,sum
+       列表解析：squares = [value**2 for value in range(1,11)] print(squares）
+		[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+       切片：要创建切片，可指定要使用的第一个元素和最后一个元素的索引 print(squares[0:3]) ->1 4 9
+	friend_foods = my_foods[:]复制
+三、元组(2,3)
+	dimensions = (200, 50)
+	Python指出不能给元组的元素赋值,，但可以给存储元组的变量赋值。
+四、if
+         if conditional_test:
+	do something
+ 　     if-elif-else 结构 
+五、
+	
+
+	
