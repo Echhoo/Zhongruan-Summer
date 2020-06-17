@@ -47,7 +47,13 @@
          if conditional_test:
 	do something
  　     if-elif-else 结构 
-五、
+五、字典{'a':'b','c':5}
+	字典 字典 是一系列键 键—值对 值对 。
+类似java（见学习pdf）
+六、用户输入和while循环
+七、函数
+八、类
+九、文件和异常
 	
 
 	
