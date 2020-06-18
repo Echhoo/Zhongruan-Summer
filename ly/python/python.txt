@@ -84,12 +84,20 @@
 	while循环可以定义用户是否是选择退出
 	break退出循环
 	continue退出本次循环
+	Python pass 是空语句，是为了保持程序结构的完整性。
+	pass 不做任何事情，一般用做占位语句。
 七、函数
 	def hello():定义
 	hello()调用
+	def(name[:]) 禁止函数修改列表
+	def make(*toppings) 传递任意数量的形参（元组）
+	导入模块：import module// from A import A.a// from A import* // from A import A.a as a//
+		import A as a
 八、类
 	class Dog():
+	定义子类 括号内引用父类的名称 class Cat(Dog) super()
+	x
 九、文件和异常
-	
+外星人12-14
 
 	
