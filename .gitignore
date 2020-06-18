@@ -1,2 +1,14 @@
 # 忽略.DS_Srore
 .DS_Store
+
+# git ignore
+.gitignore
+
+# idea
+.idea
+
+# venv
+/venv
+
+# py
+__pycache__

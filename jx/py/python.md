@@ -19,13 +19,13 @@
 4. 与其他语句类似 \
    运算符周围要有空格 \
    e.g.
-   ```
+   ```python
    a=b+c        # wrong!
    a = b + c    # right
    ```
 5. 函数中给形参赋值的=左右不要有空格\
    e.g. 
-   ```
+   ```python
    a = f(x=2, y=3)
    ```
 6. 命名规范
@@ -54,12 +54,12 @@
     |!=|不等于|
     > python比较的特殊性质 \
     > `比较操作可以传递`
-    ```
+    ```python
     a < b < c   # a < b and b < c
     a < b == c  # a < b and b == c
     ```
     > 序列比较与字符串比较类似
-    ```
+    ```python
     (1, 2) < (1, 1, 3) # False
     (1, 2) < (3)       # True
     ```
@@ -74,32 +74,32 @@
 ### 数字
 > 整数 \ 浮点数
 - 数字转字符串
-    ```
+    ```python
     str(number)
     ```
 - 字符串转数字
     - 字符串转整数
-        ```
+        ```python
         int(str)
         ```
     - 字符串转浮点数
-        ```
+        ```python
         float(str)
         ```
 ### 字符串
 - 修改大小写
-    ```
+    ```python
     str.upper() # 全部大写
     str.lower() # 全部小写
     ```
 - 字符串运算
     - `+` 合并两个字符串
     - `*` 将一个字符串重复出现多次
-        ```
+        ```python
         'a' * 4 # 结果'aaaa'
         ```
 - 删除空白
-    ```
+    ```python
     str.rstrip() # 删除末尾的空白
     str.lstrip() # 删除开头的空白
     str.strip()  # 删除两端的空白
@@ -130,7 +130,7 @@
     > 返回列表的一个浅拷贝，等价于 a[:]   
 #### 列表切片
 > 类似于matlab
-```
+```python
 a = [1, 2, 3, 4, 5, 6]
 a[0 : 2]  # [1, 2]
 a[4 : -1] # [5, 6]
@@ -142,16 +142,16 @@ a[:]      # 复制列表
     > 列表就可作为栈使用
 ### 队列
 使用collections.deque即可充当队列
-```
+```python
 from collections import deque
 queue = deque(["Eric", "John", "Michael"])
 queue.append("Terry")
-`queue.popleft()`
+queue.popleft()
 ```
 ### 元组
 > 由()包围，不可更改，中间可嵌套任意数据类型
 - 构造方式
-    ```
+    ```python
     tuple = (1, 2, 3)
     tuple = 1, 2, 3
     ```
@@ -159,12 +159,12 @@ queue.append("Terry")
 > 集合是由不重复元素组成的无序的集。它的基本用法包括成员检测和消除重复
 元素。集合对象也支持像联合，交集，差集，对称差分等数学运算。
 - 构造方式
-    ```
+    ```python
     a = set()          # {}
     a = set('aaaabcd') # { 'a', 'b', 'c', 'd' }
     ```
 - 运算
-    ```
+    ```python
     a = set('abracadabra')  # {'a', 'r', 'b', 'c', 'd'}
     b = set('alacazam')     # {'a', 'l', 'z', 'c', 'm'}
     a - b                   # {'r', 'd', 'b'} 集合减运算
@@ -177,11 +177,11 @@ queue.append("Terry")
 ### 字典
 > 与列表类似，不过依据键值对索引
 - 构造方式
-    ```
+    ```python
     a = {}      # 空字典
     a = dict()  # 空字典
     ```
-    ```
+    ```python
     dict(sape=4139, guido=4127, jack=4098)
     # 生成{'sape': 4139, 'guido': 4127, 'jack': 4098}
     ```
@@ -192,7 +192,7 @@ queue.append("Terry")
 
 ## 语句
 ### 赋值语句
-```
+```python
 string1, string2, string3 = '', 'Trondheim', 'Hammer Dance' # 对应位置进行赋值
 ```
 ### 选择语句 
@@ -201,7 +201,7 @@ string1, string2, string3 = '', 'Trondheim', 'Hammer Dance' # 对应位置进行
 > 冒号: 注意每个`if`, `else`, `elif`后都要加`:` \
 > 可以没有`else`, `elif` \
 > py没有`switch case`
-```
+```python
 if ...:
     pass
 elif ...:
@@ -210,7 +210,7 @@ else:
     pass
 ```
 e.g.
-```
+```python
 if x < 0:
     print('negative')
 elif x = 0: 
@@ -223,7 +223,7 @@ else:
 ### 循环语句
 - for 循环
     > 一般用于循环遍历某个列表、集合或类似的
-    ```
+    ```python
     b = [1, 2, 3]
     for a in b:
         print(a ** 2)
@@ -236,7 +236,7 @@ else:
         > break, continue与java, c, cpp用法类似
 
         `其中else不会在break状态下被执行`
-        ```
+        ```python
         for n in range(2, 10):
             for x in range(2, n): if n % x == 0:
                 print(n, 'equals', x, '*', n//x)
@@ -255,7 +255,7 @@ else:
         ```
 - while语句
     > 用于计数循环较多
-    ```
+    ```python
     i = 1
     while i <= 3:
         print(i ** 2)
@@ -264,43 +264,43 @@ else:
     ```
 - 循环技巧
     1. 当在字典中循环时，用 items() 方法可将关键字和对应的值同时取出
-        ```
+        ```python
         knights = {'gallahad': 'the pure', 'robin': 'the brave'}
         for k, v in knights.items():
             print(k, v)
         ```
         输出
-        ```
+        ```python
         gallahad the pure
         robin the brave
         ```
     2. 当在序列中循环时，用 enumerate() 函数可以将索引位置和其对应的值同时取出
-        ```
+        ```python
         for i, v in enumerate(['tic', 'tac', 'toe']):
             print(i, v)
         ```
         输出
-        ```
+        ```python
         0 tic
         1 tac 
         2 toe
         ```
     3. 当同时在两个或更多序列中循环时，可以用 zip() 函数将其内元素一一匹配。
-        ```
+        ```python
         questions = ['name', 'quest', 'favorite color']
         answers = ['lancelot', 'the holy grail', 'blue']
         for q, a in zip(questions, answers):
             print('What is your {0}? It is {1}.'.format(q, a))
         ```
         输出
-        ```
+        ```python
         What is your name? It is lancelot.
         What is your quest? It is the holy grail. What is your favorite color? It is blue.
         ```
         *注意这里用到了字符串的format函数*
     4. 逆向循环使用reversed函数
     5. 删除包含特定值的所有列表元素
-        ```
+        ```python
         while 'cat' in pets:
             pets.remove('cat')
         ```
@@ -310,16 +310,16 @@ else:
 
 ### lambda表达式
 - 列表
-    ```
+    ```python
     a  = range(10)
     s1 = [x ** 2 for x in a] 
     s2 = list(map(lambda x: x**2, range(10)))
     ```
-    ```
+    ```python
     [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
     ```
     上式等同于
-    ```
+    ```python
     combs = []
     for x in [1,2,3]:
         for y in [3,1,4]:
@@ -327,7 +327,7 @@ else:
                 combs.append((x, y))
     ```
     - 多重lambda嵌套
-        ```
+        ```python
         matrix = [
             [1, 2, 3, 4],
             [5, 6, 7, 8],
@@ -338,21 +338,21 @@ else:
 - 集合
     > 把list中的[]换成{}即可，并未发现其他不同
 - 字典
-    ```
+    ```python
     {x: x**2 for x in (2, 4, 6)}
     ```
 
 ## 模块
 - dir()
     > 内置函数 dir() 用于查找模块定义的名称。它返回一个排序过的字符串列表
-    ```
+    ```python
     import fibo
     dir(fibo) # 输出['__name__', 'fib', 'fib2']
     ```
 
 ## 函数
 0. python的函数中可以嵌套函数！！！
-    ```
+    ```python
     def a():
         def b():            # 合法
             print('b')
@@ -363,7 +363,7 @@ else:
         > 这里类似于cpp函数传入列表指针
     - 禁止函数修改列表
         > 要将列表的副本传递给函数
-        ```
+        ```python
         mod_list(list[:])
         ```
 2. 传递任意数量的参数
@@ -371,7 +371,7 @@ else:
 
     即将用户输入的所有参数变为一个元组 \
     e.g.
-    ```
+    ```python
     def make_pizza(*toppings): 
         """打印顾客点的所有配料""" 
         print(toppings)
@@ -379,7 +379,7 @@ else:
     make_pizza('mushrooms', 'green peppers', 'extra cheese')
     ```
     输出
-    ```
+    ```python
     ('pepperoni',)
     ('mushrooms', 'green peppers', 'extra cheese')
     ```
@@ -388,7 +388,7 @@ else:
 
     将用户的输入转换成一个字典 \
     e.g.
-    ```
+    ```python
     def build_profile(first, last, **user_info):
         """创建一个字典，其中包含我们知道的有关用户的一切"""
         profile = {}
@@ -402,7 +402,7 @@ else:
 ## 类
 - 构造函数
     > \_\_init\_\_()
-    ```
+    ```python
     class A:
         def __init__():
             print('A\'s constructor')
@@ -411,7 +411,7 @@ else:
 
     在变量前加两个下划线，编译器会解释为_classname__name \
     e.g.
-    ```
+    ```python
     class Mapping:
         def __init__(self, iterable):
             self.items_list = [] 
@@ -435,7 +435,7 @@ else:
 for语句会在in后边的容器对象上调用iter()，该函数返回一个定义了 \_\_next\_\_() 方法的迭代器对象\
 当元素用尽时，\_\_next\_\_() 将引发 StopIteration 异常来通知终止 for 循环\
 e.g.
-```
+```python
 >>> s = 'abc'
 >>> it = iter(s)
 >>> it
@@ -456,7 +456,7 @@ StopIteration
     定义一个 \_\_iter\_\_() 方法来`返回一个带有 \_\_next\_\_() 方法的对象`。如果类已定义了 \_\_next\_\_()，则 \_\_iter\_\_() 可以简单地返回 self
 
     e.g.
-    ```
+    ```python
     class Reverse:
     """Iterator for looping over a sequence backwards.""" 
     def __init__(self, data):
@@ -470,7 +470,7 @@ StopIteration
         return self.data[self.index]
     ```
     使用
-    ```
+    ```python
     >>> rev = Reverse('spam')
     >>> for char in rev: 
     ...     print(char)
@@ -485,13 +485,13 @@ StopIteration
 
 它们的写法类似标准的函数，但当它们要返回数据时 会使用 yield 语句。每次对生成器调用 next() 时，它会从上次离开位置恢复执行
 e.g.
-```
+```python
 def reverse(data):
     for index in range(len(data)-1, -1, -1):
         yield data[index]
 ```
 使用
-```
+```python
 >>> for char in reverse('golf'): 
 ... print(char)
 ...
@@ -503,7 +503,7 @@ g
 
 ## 文件读写
 - 打开文件
-    ```
+    ```python
     open(filename, mode='r')
     ```
     mode参数
@@ -515,7 +515,7 @@ g
 
     在处理文件对象时，最好使用 with 关键字。优点是当子句体结束后文件会正确关闭，即使在某个时刻引发 了异常。而且使用 with 相比等效的 try-finally 代码块要简短得多:\
     e.g.
-    ```
+    ```python
     >>> with open('workfile') as f: ... read_data = f.read() >>> f.closed
     True
     ```
@@ -535,7 +535,7 @@ g
     3. f.readlines()
         > 读取所有行
     4. 迭代访问文件每行
-        ```
+        ```python
         >>> for line in f:
         ...     print(line, end='')
         ...
@@ -545,18 +545,18 @@ g
 
 ## 使用 json 保存结构化数据
 1. json.dumps(object)
-    ```
+    ```python
     >>> import json
     >>> json.dumps([1, 'simple', 'list']) 
     ... '[1, "simple", "list"]
     ```
 2. json.dump(object, textfile) 与 json.load(textfile)
     > 它只是将对象序列化为text file
-    ```
+    ```python
     json.dump(x, f)
     ```
     要再次解码对象，如果 f 是一个打开的以供阅读的text file 对象:
-    ```
+    ```python
     x = json.load(f)
     ```
     > 这种简单的序列化技术可以处理列表和字典，但是在 JSON 中序列化任意类的实例需要额外的努力
@@ -564,7 +564,7 @@ g
 ## 异常处理
 1. try ... except ... \[finally\] ...
     > 这些与在java中类似
-    ```
+    ```python
     try:
         pass
     except Exception as _:
@@ -573,7 +573,7 @@ g
         pass
     ```
     e.g.
-    ```
+    ```python
     import sys 
     try:
         f = open('myfile.txt') 
@@ -589,7 +589,7 @@ g
     ```
     - else语句
         > 未引发异常时使用
-        ```
+        ```python
         for arg in sys.argv[1:]: 
         try:
             f = open(arg, 'r') 
@@ -601,7 +601,7 @@ g
         ```
 2. 异常参数
     >参数存储在 instance. args 中
-    ```
+    ```python
     >>> try:
     ...     raise Exception('spam', 'eggs')
     ... except Exception as inst:
@@ -614,19 +614,19 @@ g
     ...
     <class 'Exception'> 
     ('spam', 'eggs') 
-    å('spam', 'eggs')
+    ('spam', 'eggs')
     x = spam
     y = eggs
     ```
 3. 抛出异常
-    ```
+    ```python
     raise exception
     ```
 4. 自定义异常
     
     需要继承Exception\
     e.g.
-    ```
+    ```python
     class TransitionError(Error):
     """Raised when an operation attempts a state transition that's not allowed.
 
@@ -638,5 +638,5 @@ g
         def __init__(self, previous, next, message): 
             self.previous = previous
             self.next = next
-            self.message = message]
+            self.message = message
     ```
