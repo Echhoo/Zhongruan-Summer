@@ -61,7 +61,7 @@
    ```
    这里安装java 1.8 jdk
 
-   某人安装位置/usr/lib/jvm
+   默认安装位置/usr/lib/jvm
 2. 验证安装
    ```
    java -version
