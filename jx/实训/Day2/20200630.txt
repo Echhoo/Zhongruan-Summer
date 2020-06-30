@@ -1,0 +1,39 @@
+20200630 Spider 
+
+1. 获取数据 == 页面数据
+    来源：
+        1. 提供可用数据源 -- 直接下载&使用、完成脱敏、完成预处理
+            政府机关、统计类网站
+            NetFlix、Movielens、Kaggle、天池
+            数据提供商
+        2. 自身生成的数据
+            业务数据：用户、商品、购买、收藏&关注、点赞&评分
+            行为数据：浏览记录、搜索记录、停留信息
+                --- 埋点
+                --- 刘鹏 计算广告、项亮 推荐系统实战
+        *3. 直接页面获取 - spider
+            baidu、google
+            企查查...
+        4. 黑产 ...
+        
+1. 获取页面(静态、动态)
+2. 解析&定位
+    Chrome ： 
+        #IMDbHomepageSiteReactViews > main > div.ipc-page-content-container.ipc-page-content-container--center.sc-iAyFgw.hoPoA > div:nth-child(7) > section > div > div > div.ipc-sub-grid.ipc-sub-grid--page-span-3.ipc-sub-grid--nowrap.ipc-shoveler__grid > div:nth-child(1) > div > a > div.ipc-lockup-overlay__gradient.ipc-lockup-overlay__gradient--linear
+        ---
+        //*[@id="IMDbHomepageSiteReactViews"]/main/div[2]/div[3]/section/div/div/div[2]/div[1]/div/a/div[2]
+    Firefox：
+        div.ipc-shoveler:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2) > div:nth-child(2)
+        ---
+        /html/body/div[1]/main/div[2]/div[3]/section/div/div/div[2]/div[1]/div/a/div[2]
+3. 提取内容
+    1. 标签体内容
+    2. 标签属性值
+    
+Java - URL
+    页面特有媒体资源的下载
+Java - 第三方工具=jar -- JSoup 
+Java - 第三方框架
+    HttpClient、HtmlUnit、Selenium
+    
+http://www.useragentstring.com/pages/useragentstring.php
